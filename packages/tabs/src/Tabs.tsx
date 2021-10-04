@@ -13,7 +13,7 @@ import { pipe } from './pipe'
 import * as css from './Tabs.css'
 import { makeState } from './Tabs.state'
 import { makeTranslation } from './Tabs.translation'
-import { TabsControllerContext } from './useTabsController'
+import { ContextTabsController } from './useTabsController'
 
 export interface ITab {
   /**
@@ -295,7 +295,7 @@ const Tabs: React.FC<ITabsProps> = (props) => {
   }, [])
 
   return (
-    <TabsControllerContext.Provider
+    <ContextTabsController.Provider
       value={useMemo(
         () => ({
           go,
@@ -357,7 +357,7 @@ const Tabs: React.FC<ITabsProps> = (props) => {
           ))}
         </div>
       </div>
-    </TabsControllerContext.Provider>
+    </ContextTabsController.Provider>
   )
 }
 
